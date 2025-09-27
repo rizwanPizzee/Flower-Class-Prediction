@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Flower Class Prediction</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #6a11cb, #2575fc);
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .container {
+        background: #fff;
+        padding: 40px 30px;
+        border-radius: 15px;
+        box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+        width: 350px;
+        text-align: center;
+      }
+
+      .container h1 {
+        margin-bottom: 25px;
+        font-size: 24px;
+        color: #333;
+      }
+
+      .container input[type="text"] {
+        width: 95%;
+        padding: 12px 15px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-size: 15px;
+        outline: none;
+        transition: 0.3s;
+      }
+
+      .container input[type="text"]:focus {
+        border-color: #2575fc;
+        box-shadow: 0px 0px 8px rgba(37, 117, 252, 0.4);
+      }
+
+      .btn {
+        width: 100%;
+        padding: 12px;
+        margin-top: 15px;
+        background: #2575fc;
+        border: none;
+        border-radius: 8px;
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      .btn:hover {
+        background: #6a11cb;
+      }
+
+      .prediction {
+        margin-top: 20px;
+        font-size: 18px;
+        font-weight: bold;
+        color: #333;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Flower Class Prediction</h1>
+      <form action="/" method="post">
+        <input
+          type="text"
+          name="Sepal_Length"
+          placeholder="Sepal Length"
+          required="required"
+        />
+        <input
+          type="text"
+          name="Sepal_Width"
+          placeholder="Sepal Width"
+          required="required"
+        />
+        <input
+          type="text"
+          name="Petal_Length"
+          placeholder="Petal Length"
+          required="required"
+        />
+        <input
+          type="text"
+          name="Petal_Width"
+          placeholder="Petal Width"
+          required="required"
+        />
+
+        <button type="submit" class="btn">Predict</button>
+      </form>
+      {% if prediction_text %}
+      <div class="prediction">
+        The flower species is
+        <span style="color: rgb(90, 150, 0)">{{prediction_text}}</span>
+      </div>
+      {% endif %}
+    </div>
+  </body>
+</html>
